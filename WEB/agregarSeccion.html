@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <link rel="stylesheet" href="css/agregarSeccion.css">
+        <script src="js/volver.js"></script>
+        <script src="js/agregarSeccion.js"></script>
+        <title>Asistente UDG - Agregar Secciones</title>
+    </head>
+    <body onload="llenarInfo()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Agregar Secciones</h1>
+            </div>
+            <br>
+            <br>
+            <div class="info">
+                <label>Clave:</label>
+                <label id="clave"></label>
+                <br>
+                <label>Nombre:</label>
+                <label id="nombre"></label>
+                <br>
+                <label>NRC:</label>
+                <input id="nrc" type="number">
+                <br>
+                <label>Profesor:</label>
+                <input id="profesor" type="text">
+                <br>
+                <label>Horario:</label>
+                L<input id="L" type="checkbox" value="L">
+                M<input id="M" type="checkbox" value="M">
+                I<input id="I" type="checkbox" value="I">
+                J<input id="J" type="checkbox" value="J">
+                V<input id="V" type="checkbox" value="V">
+                S<input id="S" type="checkbox" value="S">
+                <br>
+                Inicio: <input id="inicio" type="time">
+                Fin: <input id="fin" type="time">
+                <br>
+                <label>Aula:</label>
+                <input id="aula" type="text">
+                <br>
+                <br>
+                <button onclick="agregarSeccion()">Agregar Sección</button>
+            </div>
+        </center>
+    </body>
+</html>

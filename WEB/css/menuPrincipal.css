@@ -1,0 +1,22 @@
+button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+    border-radius: 50%;
+}
+
+.opciones {
+    width: 500px;
+    clear: both;
+}
+
+.opciones button {
+    width: 100%;
+    clear: both;
+}

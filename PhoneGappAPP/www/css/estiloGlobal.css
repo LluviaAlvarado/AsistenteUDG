@@ -1,0 +1,73 @@
+select {
+    width: 100px;
+}
+
+h1 {
+    font-size: 16pt;
+    color: white;    
+}
+
+h2 {
+    font-size: 12pt;
+    color: white;
+}
+
+p {
+    text-align: center;
+    font-size: 12pt;
+    color: #000099;
+}
+
+label {
+    text-align: center;
+    font-size: 18pt;
+    color: #000099;
+}
+
+.content label{
+    text-align: center;
+    font-size: 12pt;
+    color: #000099;
+}
+
+.center{
+    text-align: center;
+    background-color: darkblue;
+}
+
+.left {
+    background-color: brown;
+}
+
+.right {
+    background-color: brown;
+}
+
+.title{
+    background-color: #9bddff;
+}
+
+.title h1{
+    text-align: justify;
+    font-size: 14pt;
+    color: darkblue;
+}
+
+.content p{
+    text-align: left;
+    font-size: 12pt;
+    color: black;
+}
+
+.pendientesCM{
+    outline: 2px groove red;
+}
+.datos {
+    width: inherit;
+    clear: both;
+}
+
+.datos ons-input {
+    width: 80%;
+    clear: both;
+}

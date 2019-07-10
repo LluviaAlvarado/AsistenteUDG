@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <link rel="stylesheet" href="css/agregarSeccion.css">
+        <script src="js/volver.js"></script>
+        <script src="js/agregarActividad.js"></script>
+        <title>Asistente UDG - Agregar Actividades</title>
+    </head>
+    <body onload="llenarTipos()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Agregar Actividades</h1>
+            </div>
+            <br>
+            <br>
+            <div class="info">
+                <label>Clave:</label>
+                <label id="clave"></label>
+                <br>
+                <label>NRC:</label>
+                <label id="nrc"></label>
+                <br>
+                <label>Título:</label>
+                <input id="titulo" type="text">
+                <br>
+                <label>Fecha:</label>
+                <input id="fecha" type="date">
+                <br>
+                <label>Tipo:</label>
+                <select id="tipos"></select>
+                <br>
+                <label>Descripción:</label>
+                <textarea id="descripcion" rows="5" cols="50"></textarea>
+                <br>
+                <br>
+                <button onclick="agregarActividad()">Agregar Actividad</button>
+            </div>
+        </center>
+    </body>
+</html>

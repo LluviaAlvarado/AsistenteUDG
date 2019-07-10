@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <link rel="stylesheet" href="css/actividades.css">
+        <script src="js/volver.js"></script>
+        <script src="js/detalles.js"></script>
+        <title>Asistente UDG - Detalles de Actividad</title>
+    </head>
+    <body onload="llenarEntregas()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Detalles de la Actividad</h1>
+            </div>
+            <br>
+            <br>
+            <div class="datos">
+                <label>Clave:</label>
+                <label id="clave"></label>
+                <br>
+                <label>NRC:</label>
+                <label id="nrc"></label>
+                <br>
+                <label>Titulo:</label>
+                <label id="titulo"></label>
+                <br>
+                <label>Tipo:</label>
+                <label id="tipo"></label>
+                <br>
+                <label>Pendiente:</label>
+                <label id="pendiente"></label>
+                <br>
+                <label>Descripción:</label>
+                <p id="descripcion"></p>
+                <br>
+                <label>Entregas:</label>
+                <table id="entregas">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+                <br>
+                <button onclick="guardar()">Guardar Cambios</button>
+            </div>
+        </center>
+    </body>
+</html>

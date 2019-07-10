@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <script src="js/volver.js"></script>
+        <script src="js/eliminarMateria.js"></script>
+        <title>Asistente UDG - Eliminar Materias</title>
+    </head>
+    <body onload="llenarListaClaves()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Eliminar Materias</h1>
+            </div>
+            <br>
+            <br>
+            <div class="datos">
+                <label>Clave:</label>
+                <select id="listaClaves"></select>
+            </div>
+            <br>
+            <br>
+            <button onclick="eliminar()">Eliminar</button>
+        </center>
+    </body>
+</html>

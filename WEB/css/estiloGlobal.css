@@ -1,0 +1,84 @@
+select {
+    width: 100px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    color: white;
+}
+
+p {
+    text-align: center;
+    font-size: 12pt;
+    color: #000099;
+}
+
+label {
+    text-align: center;
+    font-size: 18pt;
+    color: #000099;
+}
+
+.titulo{
+    background-color:darkblue; 
+}
+
+button {
+    background-color: brown;
+    color: white;
+    border: none;
+    display: inline-block;
+    padding: 10px;
+    font-size: 18px;
+    margin: 4px 2px;
+    border-radius: 10%;
+}
+
+button:hover {
+    background-color: darkslateblue;
+}
+
+button:focus {
+    background-color: darkblue;
+}
+
+.datos {
+    width: 500px;
+    clear: both;
+}
+
+.datos input {
+    width: 100%;
+    clear: both;
+}
+
+.irAtras{
+    width: 100px;
+    background-color: cornflowerblue;
+    position:fixed;
+    margin-left:0px;
+}
+
+#botonAtras {
+    height:30px;
+    width: 90px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 0%;
+}
+
+#botonAtras:hover {
+    background-color: darkgoldenrod;
+}
+
+#botonAtras:focus {
+    background-color: darkred;
+}

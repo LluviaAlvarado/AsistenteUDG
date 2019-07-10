@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <script src="js/volver.js"></script>
+        <script src="js/administrarMaterias.js"></script>
+        <title>Asistente UDG - Administrar Materias</title>
+    </head>
+    <body onload="llenarListaClaves()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Administrar Materias</h1>
+            </div>
+            <br>
+            <br>
+            <div class="datos">
+                <label>Clave:</label>
+                <select id="listaClaves" onchange="claveCambio()"></select>
+                <br>
+                <label>Nombre:</label>
+                <label id="nombre"></label>
+                <br>
+                <label>NRC:</label>
+                <select id="listaNRC" onchange="nrcCambio()"></select>
+                <br>
+                <label>Profesor:</label>
+                <label id="profesor"></label>
+                <br>
+                <label>Horario:</label>
+                <label id="horario"></label>
+                <br>
+                <label>Aula:</label>
+                <label id="aula"></label>
+                <br>
+                <br>
+                <button onclick="verActividades()">Ver Actividades</button>
+            </div>
+            <br>
+            <br>
+            <div class="datos">
+                <button onclick="agregarSeccion()">Agregar Sección</button>
+                <button onclick="eliminarSeccion()">Eliminar Sección</button>
+            </div>
+        </center>
+    </body>
+</html>

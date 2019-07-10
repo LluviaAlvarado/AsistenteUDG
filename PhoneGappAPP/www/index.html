@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <script src="js/menuPrincipal.js"></script>
+        <title>Asistente UDG Login</title>
+    </head>
+    <body>
+        <ons-page>
+            <ons-splitter>
+            <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
+            <ons-page>
+                <ons-navigator swipeable id="menuNavigator" page="menuAlumno.html"></ons-navigator>
+            </ons-page>
+            </ons-splitter-side>
+            <ons-splitter-content id="content" page="base.html"></ons-splitter-content>
+            </ons-splitter>
+        </ons-page>
+        
+        <template id="base.html">
+        <ons-page id="base">
+            <ons-navigator swipeable id="myNavigator" page="login.html"></ons-navigator>
+        </ons-page>
+        </template>
+        
+        <template id="menuAlumno.html">
+            <ons-page id="menuAlumno">
+                <ons-toolbar>
+                <div class="center">
+                    <h2>Info del Estudiante</h2>
+                </div>
+                </ons-toolbar>
+                <ons-card id="infoAlumno">
+                    <div class="title" style="background-color: white">
+                        <img id="imagenAlumno" height="205" width="150"></img>
+                    </div>
+                    <div class="content">
+                        <label>Nombre: </label><p id="nombreAlumno"></p>
+                        <label>Código: </label><p id="codigoAlumno"></p>
+                        <label>CU: </label><p id="cuAlumno"></p>
+                        <label>Carrera: </label><p id="carreraAlumno"></p>
+                        <label>Estatus: </label><p id="estatusAlumno"></p>
+                    </div>
+                </ons-card>
+              </ons-page>
+        </template>
+        
+        <template id="menuDMateria.html">
+            <ons-page id="menuDMateria">
+                <ons-toolbar>
+                <div class="center">
+                    <h2>Info de Materia</h2>
+                </div>
+                </ons-toolbar>
+                <div class="content">
+                    <label>Nombre: </label><p id="nombreMateria"></p>
+                    <label>Clave: </label><p id="claveMateria"></p>
+                    <label>NRC: </label><p id="nrcMateria"></p>
+                    <label>Profesor: </label><p id="profesorMateria"></p>
+                    <label>Horario: </label><p id="horarioMateria"></p>
+                    <label>Aula: </label><p id="aulaMateria"></p>
+                    <label>Criterio de Evaluación:</label>
+                    <ons-list id="criterios">
+                        <ons-list-header>Criterio de Evaluación:</ons-list-header>
+                    </ons-list>
+                    <center>
+                        <label>Puntos Totales: </label><p id="puntosMateria"></p>
+                        <ons-button onclick="removerMateria()">Eliminar Materia</ons-button>
+                    </center>
+                </div>
+            </ons-page>
+        </template>
+        
+        <template id="login.html">
+        <ons-page id="login">
+            <ons-toolbar>
+                <div class="center">
+                    <h1>Asistente UDG</h1>
+                </div>
+            </ons-toolbar>
+            <center>
+                <br>
+                <br>
+                <img id="logo" src="src/logo-udg.jpg" height="205" width="150">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label>Código: </label><ons-input id="codigo" type="number" modifier="underbar"></ons-input>
+                <br>
+                <br>
+                <label>NIP: </label><ons-input id="nip" type="password" modifier="underbar"></ons-input>
+                <br>
+                <br>
+                <br>
+                <br>
+                <ons-button onclick="ingresar()">Ingresar</ons-button>
+            </center>
+        </ons-page>
+        </template>
+        
+        <template id="menuPrincipal.html">
+        <ons-page id="menuPrincipal">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Volver</ons-back-button>
+                </div>
+                <div class="center">
+                    <h1>Asistente UDG</h1>
+                </div>
+                <div class="right">
+                    <ons-toolbar-button onclick="fn.open()">
+                    <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+            <ons-progress-bar id="cargandoMaterias"indeterminate></ons-progress-bar>
+            <ons-fab position="bottom right" onclick="agregarMateria()">
+                <ons-icon icon="md-plus"></ons-icon>
+            </ons-fab>
+        </ons-page>
+        </template>
+        
+        <template id="menuMateria.html">
+        <ons-page id="menuMateria">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Volver</ons-back-button>
+                </div>
+                <div class="center">
+                    <h1 id="nombreMateriaM"></h1>
+                </div>
+                <div class="right">
+                    <ons-toolbar-button onclick="fn.open()">
+                    <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+            <ons-progress-bar id="cargandoActividades"indeterminate></ons-progress-bar>
+            <p id="actividadesPendientesM"></p>
+        </ons-page>
+        </template>
+        
+        <template id="menuEntregadas.html">
+        <ons-page id="menuEntregadas">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Volver</ons-back-button>
+                </div>
+                <div class="center">
+                    <h1 id="criterioEntregadas"></h1>
+                </div>
+            </ons-toolbar>
+            <ons-progress-bar id="cargandoActividadesE"indeterminate></ons-progress-bar>
+            <p id="actividadesEntregadas"></p>
+        </ons-page>
+        </template>
+        
+        <template id="pendiente.html">
+        <ons-page id="pendiente">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Volver</ons-back-button>
+                </div>
+                <div class="center">
+                    <h1 id="tituloPendiente"></h1>
+                </div>
+            </ons-toolbar>
+            <center>
+            <label>Tipo: </label><p id="tipoPendiente"></p>
+            <label>Fecha: </label><p id="fechaPendiente"></p>
+            <label>Descripción: </label><p id="descripcionPendiente"></p>
+            <br>
+            <ons-button onclick="entregarTarea()">Entregada</ons-button>
+            </center>
+        </ons-page>
+        </template>
+        
+        <template id="entregada.html">
+        <ons-page id="entregada">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Volver</ons-back-button>
+                </div>
+                <div class="center">
+                    <h1 id="tituloEntregada"></h1>
+                </div>
+            </ons-toolbar>
+            <label>Tipo: </label><p id="tipoEntregada"></p>
+            <label>Fecha: </label><p id="fechaEntregada"></p>
+            <label>Calificación: </label><p id="calificacionEntregada"></p>
+            <label>Descripción: </label><p id="descripcionEntregada"></p>
+        </ons-page>
+        </template>
+        
+        <template id="agregarMateria.html">
+        <ons-dialog id="agregarMateria">
+          <div style="text-align: center; padding: 10px;">
+            <p>Clave:</p>
+            <select id="clavesAM" onchange="claveCambio(event)"></select>
+            <br>
+            <p>Nrc:</p>
+            <select id="nrcsAM"></select>
+            <br>
+            <br>
+            <br>
+            <ons-button onclick="agregar()">Agregar</ons-button>
+          </div>
+        </ons-dialog>
+        </template>
+        
+        <template id="entregar.html">
+        <ons-dialog id="entregar">
+          <div style="text-align: center; padding: 10px;">
+            <label>Calificación:</label>
+            <ons-input id="calificacionE" type="number" min="0" max="100" modifier="underbar"></ons-input>
+            <br>
+            <br>
+            <ons-button onclick="guardarCalificacion()">Aceptar</ons-button>
+          </div>
+        </ons-dialog>
+        </template>
+        
+        <template id="eliminarMateria.html">
+        <ons-alert-dialog id="eliminarMateria" modifier="rowfooter" cancelable>
+          <div class="alert-dialog-title">Alerta</div>
+          <div class="alert-dialog-content">
+            <p id="mensajeEM"></p>
+            <br>
+          </div>
+          <div class="alert-dialog-footer">
+            <ons-alert-dialog-button onclick="esconderEM()">Cancelar</ons-alert-dialog-button>
+            <ons-alert-dialog-button onclick="eliminarMateria()">Aceptar</ons-alert-dialog-button>
+          </div>
+        </ons-alert-dialog>
+        </template>
+        
+        <template id="cardMateria.html">
+        <ons-gesture-detector>
+        <ons-card id="cardMateria">
+            <div class="title">
+                <h1 id="nombreCM"></h1>
+            </div>
+            <div class="content">
+                <div>
+                    <p id="horarioCM"></p>
+                    <p id="aulaCM"></p>
+                    <p id="claveNRC" style="color: white"></p>
+                </div>
+                <div class="pendientesCM">
+                    <p id="pendientesCM"></p>
+                </div>
+            </div>
+        </ons-card>
+        <ons-gesture-detector>
+        </template>
+        
+        <template id="cardActividad.html">
+        <ons-gesture-detector>
+        <ons-card id="cardActividad">
+            <div class="title">
+                <h1 id="tituloCA"></h1>
+            </div>
+            <div class="content">
+                <p id="fechaCA"></p>
+            </div>
+        </ons-card>
+        <ons-gesture-detector>
+        </template>
+        
+        <template id="cardActividadE.html">
+        <ons-gesture-detector>
+        <ons-card id="cardActividadE">
+            <div class="title">
+                <h1 id="tituloCAE"></h1>
+            </div>
+            <div class="content">
+                <p id="calificacionCAE"></p>
+            </div>
+        </ons-card>
+        <ons-gesture-detector>
+        </template>
+        
+        <template id="itemCriterio.html">
+        <ons-list-item id="itemCriterio" onclick="verEntregas(event)" tappable>
+            <div class="left" style="background-color: white">
+                <p id="criterio"></p>
+            </div>
+            <div class="center" style="background-color: white"></div>
+            <div class="right" style="background-color: white">
+                <p id="puntos"></p>
+            </div>
+        </ons-list-item>
+        </template>
+    </body>
+</html>
+
+

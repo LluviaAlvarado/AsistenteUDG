@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <script src="js/volver.js"></script>
+        <script src="js/agregarTipo.js"></script>
+        <title>Asistente UDG - Agregar Tipos</title>
+    </head>
+    <body onload="llenarInfo()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Agregar Tipos</h1>
+            </div>
+            <br>
+            <br>
+            <div class="datos">
+                <label>Clave:</label>
+                <label id="clave"></label>
+                <br>
+                <label>NRC:</label>
+                <label id="nrc"></label>
+                <br>
+                Tipo:<input id="tipo" type="text">
+                <br>
+                Puntos:<input id="puntos" type="number">
+            </div>
+            <br>
+            <br>
+            <button onclick="agregar()">Agregar</button>
+        </center>
+    </body>
+</html>

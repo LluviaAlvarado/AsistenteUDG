@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estiloGlobal.css">
+        <link rel="stylesheet" href="css/actividades.css">
+        <script src="js/volver.js"></script>
+        <script src="js/actividades.js"></script>
+        <title>Asistente UDG - Actividades</title>
+    </head>
+    <body onload="llenarActividades()">
+        <center>
+            <div class="titulo">
+                <div class="irAtras">
+                    <button id="botonAtras" onclick="atras()">Volver</button>
+                </div>
+                <h1>Actividades</h1>
+            </div>
+            <br>
+            <br>
+            <div class="datos">
+                <label>Clave:</label>
+                <label id="clave"></label>
+                <br>
+                <label>Nombre:</label>
+                <label id="nombre"></label>
+                <br>
+                <label>NRC:</label>
+                <label id="nrc"></label>
+                <br>
+                <label>Profesor:</label>
+                <label id="profesor"></label>
+                <br>
+                <label>Horario:</label>
+                <label id="horario"></label>
+                <br>
+                <label>Aula:</label>
+                <label id="aula"></label>
+                <br>
+                <label>Actividades:</label>
+                <table id="actividades">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+                <br>
+                <button onclick="verCriterio()">Criterio de Evaluación</button>
+            </div>
+            <div class="datos">
+                <button onclick="agregarActividad()">Agregar Actividad</button>
+                <button onclick="eliminarActividad()">Eliminar Actividad</button>
+            </div>
+        </center>
+    </body>
+</html>
